@@ -1,0 +1,38 @@
+{
+  "name": "tmp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "deploy-aws-s3-cloudfront": "^1.0.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy:production": "deploy-aws-s3-cloudfront --bucket daisu8e.net --source=./build/ --acl=public-read --distribution=E1G5QDIIM22FOO",
+    "deploy:staging": "deploy-aws-s3-cloudfront --bucket stg.daisu8e.net --source=./build/ --acl=public-read --distribution=",
+    "deploy:testing": "deploy-aws-s3-cloudfront --bucket tst.daisu8e.net --source=./build/ --acl=public-read --distribution=",
+    "deploy:development": "deploy-aws-s3-cloudfront --bucket dev.daisu8e.net --source=./build/ --acl=public-read --distribution="
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
