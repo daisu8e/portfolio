@@ -6,10 +6,9 @@ interface Props {
   items: Item[];
 }
 
-class ItemList extends Component<Props> {
+class ItemListCC extends Component<Props> {
   render() {
     const { title, items } = this.props;
-
     return (
       <div className="ItemList">
         <h1>{title}</h1>
@@ -21,4 +20,4 @@ class ItemList extends Component<Props> {
   }
 }
 
-export default ItemList;
+export default ItemListCC;
