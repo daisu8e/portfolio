@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, {FC, useState} from 'react';
 
 const FunctionComponentState: FC = () => {
   const [count, setCount] = useState(123);
@@ -6,7 +6,7 @@ const FunctionComponentState: FC = () => {
   const decrement = () => { setCount(count - 1); };
   return (
     <section className="FunctionComponentState">
-      <h1>FunctionComponentState</h1>
+      <h1>Function Component with State</h1>
       <button onClick={decrement}>-</button>
       <span>{count}</span>
       <button onClick={increment}>+</button>
