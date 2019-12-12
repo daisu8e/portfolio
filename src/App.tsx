@@ -9,6 +9,7 @@ import ClassComponentProps from './ClassComponentProps';
 import FunctionComponentProps from './FunctionComponentProps';
 import ClassComponentState from './ClassComponentState';
 import FunctionComponentState from './FunctionComponentState';
+import ClassComponentLifecycle from './ClassComponentLifecycle';
 
 import Samples from './Samples';
 new Samples().log();
@@ -22,6 +23,7 @@ const App: FC = () => {
       <FunctionComponentProps desc="description" items={items} />
       <ClassComponentState />
       <FunctionComponentState />
+      <ClassComponentLifecycle />
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 
-interface AppState {
+interface State {
   count: number;
 }
 
-class ClassComponentState extends Component<{}, AppState> {
+class ClassComponentState extends Component<{}, State> {
 
   constructor(props: {}) {
     super(props);
