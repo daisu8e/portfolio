@@ -4,7 +4,7 @@ interface AppState {
   count: number;
 }
 
-class ClassComponentProps extends Component<{}, AppState> {
+class ClassComponentState extends Component<{}, AppState> {
 
   constructor(props: {}) {
     super(props);
@@ -33,4 +33,4 @@ class ClassComponentProps extends Component<{}, AppState> {
 
 }
 
-export default ClassComponentProps;
+export default ClassComponentState;
