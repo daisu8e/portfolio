@@ -7,6 +7,7 @@ import ClassComponent from './ClassComponent';
 import FunctionComponent from './FunctionComponent';
 import ClassComponentProps from './ClassComponentProps';
 import FunctionComponentProps from './FunctionComponentProps';
+import ClassComponentState from './ClassComponentState';
 import FunctionComponentState from './FunctionComponentState';
 
 import Samples from './Samples';
@@ -19,6 +20,7 @@ const App: FC = () => {
       <FunctionComponent />
       <ClassComponentProps desc="description" items={items} />
       <FunctionComponentProps desc="description" items={items} />
+      <ClassComponentState />
       <FunctionComponentState />
     </div>
   );
