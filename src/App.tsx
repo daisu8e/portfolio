@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './App.css';
 
 import items from './items';
@@ -12,7 +12,7 @@ import FunctionComponentState from './FunctionComponentState';
 import Samples from './Samples';
 new Samples().log();
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <div className="App">
       <ClassComponent />
