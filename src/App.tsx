@@ -3,6 +3,7 @@ import './App.css';
 
 import items from './items';
 
+import ClassComponent from './ClassComponent';
 import FunctionComponent from './FunctionComponent';
 import ItemListCC from './ItemListCC';
 import ItemListFC from './ItemListFC';
@@ -14,6 +15,7 @@ new Samples().log();
 const App: React.FC = () => {
   return (
     <div className="App">
+      <ClassComponent />
       <FunctionComponent />
       <ItemListCC title="Class Component" items={items} />
       <ItemListFC title="Function Component" items={items} />
