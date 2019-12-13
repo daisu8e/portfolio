@@ -23,13 +23,15 @@ class ClassComponentLifecycleState extends Component<{}, State> {
     console.log('ClassComponentLifecycleState.componentDidMount');
   };
 
-  shouldComponentUpdate = () => {
+  shouldComponentUpdate = (nextProps: {}, nextState: State) => {
     console.log('ClassComponentLifecycleState.shouldComponentUpdate');
+    console.log(nextState)
     return true;
   };
 
-  componentDidUpdate = () => {
+  componentDidUpdate = (prevProps: {}, prevState: State) => {
     console.log('ClassComponentLifecycleState.componentDidUpdate');
+    console.log(prevState)
   };
 
   componentWillUnmount = () => {

@@ -10,6 +10,7 @@ import FunctionComponentProps from './FunctionComponentProps';
 import ClassComponentState from './ClassComponentState';
 import FunctionComponentState from './FunctionComponentState';
 import ClassComponentLifecycle from './ClassComponentLifecycle';
+import FunctionComponentLifecycle from './FunctionComponentLifecycle';
 
 import Samples from './Samples';
 new Samples().log();
@@ -24,6 +25,7 @@ const App: FC = () => {
       <ClassComponentState />
       <FunctionComponentState />
       <ClassComponentLifecycle />
+      <FunctionComponentLifecycle />
     </div>
   );
 };
