@@ -4,6 +4,8 @@ import './App.css';
 
 //import items from './items';
 //
+import Component1 from './containers/Component1';
+import Component2 from './containers/Component2';
 //import Home from './components/Home';
 //import Page1 from './components/Page1';
 //import ClassComponent from './ClassComponent';
@@ -18,10 +20,11 @@ import './App.css';
 //import Samples from './Samples';
 //new Samples().log();
 
-const App: FC = () => {
-  return (
-    <div className="App">
-      {/*
+export default (() => (
+  <div className="App">
+    <Component1 />
+    <Component2 />
+    {/*
       <Switch>
         <Route path="/page1" component={Page1} />
         <Route component={Home} />
@@ -35,8 +38,5 @@ const App: FC = () => {
       <ClassComponentLifecycle />
       <FunctionComponentLifecycle />
       */}
-    </div>
-  );
-};
-
-export default App;
+  </div>
+)) as FC;
