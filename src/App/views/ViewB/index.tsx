@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 
-import {ModelB} from 'App/models';
+import {ModelB} from 'App/models/entities';
 
 import {Nav, ComponentB} from 'App/views/components';
 import './index.css';

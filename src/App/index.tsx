@@ -10,6 +10,9 @@ export const App: FC = () => (
       <Route path="/view-a" component={views.ViewA} />
       <Route path="/view-b" component={views.ViewB} />
       <Route path="/view-c" component={views.ViewC} />
+      <Route path="/view-d" component={views.ViewD} />
+      <Route path="/view-e" component={views.ViewE} />
+      <Route path="/view-f" component={views.ViewF} />
       <Route component={views.Home} />
     </Switch>
   </div>

@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import {Model} from 'App/models';
+import {Model} from 'App/models/entities';
 
 import './index.css';
 

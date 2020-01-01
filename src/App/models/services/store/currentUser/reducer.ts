@@ -1,5 +1,5 @@
 import {CurrentUser, CurrentUserAction, CurrentUserActionType} from './types';
-import {User} from 'App/models/User';
+import {User} from 'App/models/entities/User';
 
 const initialState: CurrentUser = {
   user: new User('initial user')

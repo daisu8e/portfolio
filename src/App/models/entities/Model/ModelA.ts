@@ -1,6 +1,6 @@
-import {Model} from './Model';
+import {Model} from '../Model';
 
-export class ModelB implements Model {
+export class ModelA implements Model {
 
   name: string;
 
@@ -8,7 +8,7 @@ export class ModelB implements Model {
     this.name = name;
   }
 
-  update(name: string): ModelB {
+  update(name: string): ModelA {
     this.name = name;
     return this;
   }

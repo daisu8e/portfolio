@@ -1,5 +1,5 @@
 import BaseAction from "../BaseAction";
-import {User} from 'App/models/User';
+import {User} from 'App/models/entities/User';
 
 export interface CurrentUser {
   user: User;

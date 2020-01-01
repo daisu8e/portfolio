@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 
 import {Model} from 'App/models/entities';
 
-import {ComponentC} from 'App/views/components';
 import './index.css';
 
 interface Props {
@@ -10,18 +9,18 @@ interface Props {
   onChange?: Function;
 }
 
-export const ComponentB: FC<Props> = (props) => {
+export const ComponentF: FC<Props> = (props) => {
 
   function update() {
-    props.model.update('Component B');
+    props.model.update('Component F');
     if (props.onChange) props.onChange();
   }
 
   return (
-    <section className="ComponentB">
-      <h1>Component B : {props.model.name}</h1>
+    <section className="ComponentF">
+      <h1>Component F : {props.model.name}</h1>
       <div><button onClick={update}>Update</button></div>
-      <ComponentC model={props.model} onChange={props.onChange} />
+      {props.children}
     </section>
   );
 };
