@@ -1,6 +1,6 @@
 import {Model} from '../Model';
 
-export class ModelC implements Model{
+export class ModelC implements Model {
 
   name: string;
 
