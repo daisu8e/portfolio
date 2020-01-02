@@ -9,18 +9,18 @@ interface Props {
   onUpdate?: () => void;
 }
 
-export const ComponentC: FC<Props> = (props) => {
+export const ComponentH: FC<Props> = (props) => {
 
   const {model, onUpdate} = props;
 
   function update() {
-    model.update('Component C');
+    model.update('Component H');
     if (onUpdate) onUpdate();
   }
 
   return (
-    <section className="ComponentC">
-      <h1>Component C : {model.name}</h1>
+    <section className="ComponentH">
+      <h1>Component H : {model.name}</h1>
       <div><button onClick={update}>Update</button></div>
     </section>
   );

@@ -24,10 +24,10 @@ export const ViewD: FC = () => {
       <Nav />
       <h1>View D : {modelD.name}</h1>
       <div><button onClick={update}>Update</button></div>
-      <ComponentD model={modelD} onChange={render}>
-        <ComponentE model={modelD} onChange={render}>
-          <ComponentF model={modelD} onChange={render}>
-            <ComponentA model={modelD} onChange={render} />
+      <ComponentD model={modelD} onUpdate={render}>
+        <ComponentE model={modelD} onUpdate={render}>
+          <ComponentF model={modelD} onUpdate={render}>
+            <ComponentA model={modelD} onUpdate={render} />
           </ComponentF>
         </ComponentE>
       </ComponentD>

@@ -24,9 +24,9 @@ export const ViewE: FC = () => {
       <Nav />
       <h1>View E : {modelE.name}</h1>
       <div><button onClick={update}>Update</button></div>
-      <ComponentE model={modelE} onChange={render}>
-        <ComponentF model={modelE} onChange={render}>
-          <ComponentA model={modelE} onChange={render} />
+      <ComponentE model={modelE} onUpdate={render}>
+        <ComponentF model={modelE} onUpdate={render}>
+          <ComponentA model={modelE} onUpdate={render} />
         </ComponentF>
       </ComponentE>
     </section>

@@ -6,3 +6,4 @@ export * from './ComponentD';
 export * from './ComponentE';
 export * from './ComponentF';
 export * from './ComponentG';
+export * from './ComponentH';

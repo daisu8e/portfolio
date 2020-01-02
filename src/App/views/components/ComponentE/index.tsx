@@ -6,21 +6,23 @@ import './index.css';
 
 interface Props {
   model: Model;
-  onChange?: Function;
+  onUpdate?: () => void;
 }
 
 export const ComponentE: FC<Props> = (props) => {
 
+  const {model, onUpdate, children} = props;
+
   function update() {
-    props.model.update('Component E');
-    if (props.onChange) props.onChange();
+    model.update('Component E');
+    if (onUpdate) onUpdate();
   }
 
   return (
     <section className="ComponentE">
-      <h1>Component E : {props.model.name}</h1>
+      <h1>Component E : {model.name}</h1>
       <div><button onClick={update}>Update</button></div>
-      {props.children}
+      {children}
     </section>
   );
 };

@@ -7,21 +7,23 @@ import './index.css';
 
 interface Props {
   model: Model;
-  onChange?: Function;
+  onUpdate?: () => void;
 }
 
 export const ComponentB: FC<Props> = (props) => {
 
+  const {model, onUpdate} = props;
+
   function update() {
-    props.model.update('Component B');
-    if (props.onChange) props.onChange();
+    model.update('Component B');
+    if (onUpdate) onUpdate();
   }
 
   return (
     <section className="ComponentB">
-      <h1>Component B : {props.model.name}</h1>
+      <h1>Component B : {model.name}</h1>
       <div><button onClick={update}>Update</button></div>
-      <ComponentC model={props.model} onChange={props.onChange} />
+      <ComponentC model={model} onUpdate={onUpdate} />
     </section>
   );
 };

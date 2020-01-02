@@ -24,7 +24,7 @@ export const ViewB: FC = () => {
       <Nav />
       <h1>View B : {modelB.name}</h1>
       <div><button onClick={update}>Update</button></div>
-      <ComponentB model={modelB} onChange={render} />
+      <ComponentB model={modelB} onUpdate={render} />
     </section>
   );
 };

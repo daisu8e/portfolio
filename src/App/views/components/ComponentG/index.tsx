@@ -9,7 +9,7 @@ interface Props {
   onUpdate?: () => void;
 }
 
-export const ComponentG: FC<Props> = (props: Props) => {
+export const ComponentG: FC<Props> = (props) => {
 
   const {model, onUpdate} = props;
 

@@ -6,3 +6,4 @@ export * from './ViewD';
 export * from './ViewE';
 export * from './ViewF';
 export * from './ViewG';
+export * from './ViewH';
