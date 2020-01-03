@@ -19,6 +19,7 @@ export const App: FC = () => (
           <Route path="/view-f" component={views.ViewF} />
           <Route path="/view-g" component={views.ViewG} />
           <Route path="/view-h" component={views.ViewH} />
+          <Route path="/view-i" component={views.ViewI} />
           <Route component={views.Home} />
         </Switch>
       </Provider>
