@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 
 import {Model} from 'App/models/entities';
 
-import './index.css';
+import styles from './index.module.scss';
 
 interface Props {
   model: Model;
@@ -19,9 +19,12 @@ export const ComponentI: FC<Props> = props => {
   }
 
   return (
-    <section className="ComponentI">
+    <section>
       <h1>Component I : {model.name}</h1>
       <div><button onClick={update}>Update</button></div>
+      <div className={styles.a}>aaa</div>
+      <div className={styles.b}>bbb</div>
+      <div className={styles.c}>ccc</div>
     </section>
   );
 };

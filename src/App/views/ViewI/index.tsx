@@ -20,11 +20,14 @@ export const ViewI: FC = () => {
   }
 
   return (
-    <section className={styles.ViewI}>
-      <Nav />
+    <section>
+      <Nav/>
       <h1>View I : {modelI.name}</h1>
       <div><button onClick={update}>Update</button></div>
-      <ComponentI model={modelI} onUpdate={render} />
+      <ComponentI model={modelI} onUpdate={render}/>
+      <div className={styles.a}>aaa</div>
+      <div className={styles.b}>bbb</div>
+      <div className={styles.c}>ccc</div>
     </section>
   );
 };
