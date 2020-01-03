@@ -3,7 +3,7 @@ import React, {FC, useState} from 'react';
 import {ModelI} from 'App/models/entities';
 
 import {Nav, ComponentI} from 'App/views/components';
-import './index.css';
+import styles from './index.module.scss';
 
 export const ViewI: FC = () => {
 
@@ -20,7 +20,7 @@ export const ViewI: FC = () => {
   }
 
   return (
-    <section className="ViewI">
+    <section className={styles.ViewI}>
       <Nav />
       <h1>View I : {modelI.name}</h1>
       <div><button onClick={update}>Update</button></div>
