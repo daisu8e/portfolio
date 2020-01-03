@@ -1,21 +1,21 @@
 import React, {FC} from 'react';
 
+import {ModelHRepository} from 'App/models/repositories';
 import {Model} from 'App/models/entities';
 
 import './index.css';
 
 interface Props {
   model: Model;
-  onUpdate?: () => void;
+  onUpdate?: (model: Model) => void;
 }
 
 export const ComponentH: FC<Props> = props => {
 
-  const {model, onUpdate} = props;
+  const {model, onUpdate = () => {}} = props;
 
   function update() {
-    model.update('Component H');
-    if (onUpdate) onUpdate();
+    ModelHRepository.read(3).then(it => onUpdate(it));
   }
 
   return (

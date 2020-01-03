@@ -1,30 +1,31 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useState, useEffect} from 'react';
 
-import {ModelH} from 'App/models/entities';
+import {ModelHRepository} from 'App/models/repositories';
+import {Model, ModelH} from 'App/models/entities';
 
 import {Nav, ComponentH} from 'App/views/components';
 import './index.css';
 
 export const ViewH: FC = () => {
 
-  const [modelH] = useState(new ModelH('View H'));
-  const [, setTimestamp] = useState(new Date());
+  const [modelH, setModelH] = useState<Model>(new ModelH());
 
-  function render() {
-    setTimestamp(new Date());
+  function init() {
+    ModelHRepository.read(1).then(it => setModelH(it));
   }
 
   function update() {
-    modelH.update('View H!');
-    render();
+    ModelHRepository.read(2).then(it => setModelH(it));
   }
+
+  useEffect(init, []);
 
   return (
     <section className="ViewH">
       <Nav/>
       <h1>View H : {modelH.name}</h1>
       <div><button onClick={update}>Update</button></div>
-      <ComponentH model={modelH} onUpdate={render} />
+      <ComponentH model={modelH} onUpdate={setModelH} />
     </section>
   );
 };
