@@ -26,6 +26,8 @@ export const Nav: FC = () => {
       <span> | </span>
       <Link to="/view-i">View I</Link>
       <span> | </span>
+      <Link to="/view-j">View J</Link>
+      <span> | </span>
       <Link to="/view-x">View X</Link>
     </nav>
   );

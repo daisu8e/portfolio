@@ -5,3 +5,4 @@ export * from './ModelD';
 export * from './ModelE';
 export * from './ModelF';
 export * from './ModelI';
+export * from './ModelJ';
