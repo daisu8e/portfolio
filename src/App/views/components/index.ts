@@ -9,3 +9,4 @@ export * from './ComponentG';
 export * from './ComponentH';
 export * from './ComponentI';
 export * from './ComponentJ';
+export * from './ComponentK';
