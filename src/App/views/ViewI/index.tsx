@@ -24,10 +24,11 @@ export const ViewI: FC = () => {
       <Nav/>
       <h1>View I : {modelI.name}</h1>
       <div><button onClick={update}>Update</button></div>
-      <ComponentI model={modelI} onUpdate={render}/>
       <div className={styles.a}>aaa</div>
       <div className={styles.b}>bbb</div>
       <div className={styles.c}>ccc</div>
+      <div className={[styles.a, styles.b].join(' ')}>ccc</div>
+      <ComponentI model={modelI} onUpdate={render}/>
     </section>
   );
 };

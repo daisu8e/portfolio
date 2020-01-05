@@ -25,6 +25,7 @@ export const ComponentI: FC<Props> = props => {
       <div className={styles.a}>aaa</div>
       <div className={styles.b}>bbb</div>
       <div className={styles.c}>ccc</div>
+      <div className={[styles.a, styles.b].join(' ')}>ccc</div>
     </section>
   );
 };
