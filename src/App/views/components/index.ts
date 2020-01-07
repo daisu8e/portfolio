@@ -10,3 +10,4 @@ export * from './ComponentH';
 export * from './ComponentI';
 export * from './ComponentJ';
 export * from './ComponentK';
+export * from './ComponentL';
