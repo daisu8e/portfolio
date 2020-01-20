@@ -1,0 +1,86 @@
+$size: 100px;
+$color1: rgb(0%, 0%, 0%);
+$color2: rgb(20%, 20%, 20%);
+$color3: rgb(40%, 40%, 40%);
+$color4: rgb(60%, 60%, 60%);
+$color5: rgb(80%, 80%, 80%);
+$color6: rgb(100%, 100%, 100%);
+$step: 10%;
+$angle: 45deg;
+
+.corner1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $size;
+  height: $size;
+  background-image: linear-gradient(
+      $angle * 3,
+      $color1 $step * 0, $color1 $step * 1,
+      $color2 $step * 1, $color2 $step * 2,
+      $color3 $step * 2, $color3 $step * 3,
+      $color4 $step * 3, $color4 $step * 4,
+      $color5 $step * 4, $color5 $step * 5,
+      $color6 $step * 5
+  );
+}
+
+.corner2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: $size;
+  height: $size;
+  background-image: linear-gradient(
+      $angle * 3 + 90deg,
+      $color1 $step * 0, $color1 $step * 1,
+      $color2 $step * 1, $color2 $step * 2,
+      $color3 $step * 2, $color3 $step * 3,
+      $color4 $step * 3, $color4 $step * 4,
+      $color5 $step * 4, $color5 $step * 5,
+      $color6 $step * 5
+  );
+}
+
+.corner3 {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: $size;
+  height: $size;
+  background-image: linear-gradient(
+      $angle * 3 + 90deg * 2,
+      $color1 $step * 0, $color1 $step * 1,
+      $color2 $step * 1, $color2 $step * 2,
+      $color3 $step * 2, $color3 $step * 3,
+      $color4 $step * 3, $color4 $step * 4,
+      $color5 $step * 4, $color5 $step * 5,
+      $color6 $step * 5
+  );
+}
+
+.corner4 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: $size;
+  height: $size;
+  background-image: linear-gradient(
+      $angle * 3 + 90deg * 3,
+      $color1 $step * 0, $color1 $step * 1,
+      $color2 $step * 1, $color2 $step * 2,
+      $color3 $step * 2, $color3 $step * 3,
+      $color4 $step * 3, $color4 $step * 4,
+      $color5 $step * 4, $color5 $step * 5,
+      $color6 $step * 5
+  );
+}
+
+.logo {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  transform: rotate(12deg);
+  opacity: 0.4;
+}
+

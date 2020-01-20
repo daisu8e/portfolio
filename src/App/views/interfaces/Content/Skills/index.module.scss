@@ -1,0 +1,23 @@
+.body {
+  color: rgb(49, 49, 49);
+
+  & > h1 {
+    font-size: 3px * 27;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  & > h2 {
+    font-size: 3px * 8;
+    margin-bottom: 15px;
+  }
+
+  & > p {
+    font-size: 3px * 5;
+    margin-bottom: 15px;
+
+    & + h2 {
+      margin-top: 45px;
+    }
+  }
+}
