@@ -5,7 +5,6 @@ import {About} from './About';
 import {Work} from './Work';
 import {Theory} from './Theory';
 import {Skills} from './Skills';
-import {StyleGuide} from '../StyleGuide';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faFilePdf} from '@fortawesome/free-regular-svg-icons'
@@ -42,7 +41,6 @@ export const Content: FC = props => {
           <Route path="/work" component={Work}/>
           <Route path="/theory" component={Theory}/>
           <Route path="/skills" component={Skills}/>
-          <Route path="/style-guide" component={StyleGuide}/>
           <Redirect to=""/>
         </Switch>
       </div>
