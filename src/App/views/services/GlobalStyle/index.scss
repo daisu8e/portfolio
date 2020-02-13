@@ -1,0 +1,53 @@
+@import-normalize;
+
+$fontFamily: 'FiraSans';
+
+body {
+  margin: 0;
+  font-family: $fontFamily, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+  font-size: initial;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+ul, ol {
+  margin: 0;
+}
+
+table {
+  border-spacing: 0;
+}
+
+td {
+  padding: 0;
+}
+
+code {
+  font-family: $fontFamily, sans-serif;
+}
+
+strong {
+  font-weight: normal;
+}
+
+em {
+  font-style: normal;
+}
+
+mark {
+  background-color: transparent;
+}
