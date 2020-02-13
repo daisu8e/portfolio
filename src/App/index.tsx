@@ -1,26 +1,31 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
+
+import {Author} from './models/entities/Author';
 
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import {ResetStyles} from './views/services';
-import {Logo} from './views/components';
+import {GlobalStyle} from './views/services/GlobalStyle';
+import {Logo} from './views/components/Logo';
 import {Cover, Content} from './views/interfaces';
-import css from './index.module.scss';
+import {BackgroundImage} from './index.styled'; //Corner1, Corner2, Corner3, Corner4,
 
 export const App: FC = () => {
+
+  const [author] = useState(new Author('Daisuke Katsumata'));
+
   return (
     <>
-      <ResetStyles/>
+      <GlobalStyle/>
       {/*
-    <div className={css.corner1}></div>
-    <div className={css.corner2}></div>
-    <div className={css.corner3}></div>
-    <div className={css.corner4}></div>
-    */}
-      <div className={css.logo}><Logo/></div>
+      <Corner1/>
+      <Corner2/>
+      <Corner3/>
+      <Corner4/>
+      */}
+      <BackgroundImage><Logo/></BackgroundImage>
       <BrowserRouter>
         <Switch>
-          <Route path="/:something" component={Content}/>
-          <Route component={Cover}/>
+          <Route path="/:something" render={p => <Content {...p} author={author}/>}/>
+          <Route render={p => <Cover {...p} author={author}/>}/>
         </Switch>
       </BrowserRouter>
     </>

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
 
-import css from './index.module.scss';
+import {Root} from './index.styled';
 
-export const Logo: FC = () => <div className={css.logo}>D.</div>;
+export const Logo: FC = () => <Root size={100}>D.</Root>;
