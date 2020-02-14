@@ -38,7 +38,7 @@ jobs:
           command: CI=true npm run build
       - run:
           name: npm run deploy
-          command: npm run deploy:$PORTFOLIO_ENV
+          command: npm run deploy:${PORTFOLIO_ENV}
 
   deploy_testing:
     <<: *deploy
