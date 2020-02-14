@@ -42,6 +42,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy:development": "aws s3 sync build/ s3://d.daisu8e.com && aws cloudfront create-invalidation --distribution-id E2IX211A7L4AQO --paths '/index.html'",
+    "deploy:testing": "aws s3 sync build/ s3://t.daisu8e.com && aws cloudfront create-invalidation --distribution-id EYGS7VE89ISBX --paths '/index.html'",
+    "deploy:staging": "aws s3 sync build/ s3://s.daisu8e.com && aws cloudfront create-invalidation --distribution-id E1NCFC1FV7UB96 --paths '/index.html'",
+    "deploy:production": "aws s3 sync build/ s3://daisu8e.com && aws cloudfront create-invalidation --distribution-id ESUK40UXKCW66 --paths '/index.html'",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
