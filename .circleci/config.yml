@@ -30,8 +30,7 @@ jobs:
             curl -O https://bootstrap.pypa.io/get-pip.py
             python3 get-pip.py --user
             export PATH=~/.local/bin:$PATH
-            ls -al ~
-            source ~/.bash_login
+            source ~/.profile
             pip3 --version
 #            pip3 install awscli --upgrade --user
 
