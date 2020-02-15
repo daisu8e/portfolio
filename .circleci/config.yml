@@ -25,30 +25,30 @@ jobs:
     steps:
       - run:
           name: Install dependencies
-          working_directory: /
+          working_directory: /tmp
           command: |
-            apt-get -y -qq update
-            apt-get -y -qq install python3.4-dev
-            curl -O https://bootstrap.pypa.io/get-pip.py
-            python3.4 get-pip.py --user
-            pip install awscli --upgrade --user
+            curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
 
-      - checkout
+      - run: aws2 --version
 
-      - restore_cache:
-          key: npm-{{ checksum "package.json" }}
-      - run: npm install
-      - save_cache:
-          key: npm-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-
-      - run:
-          name: npm run build
-          command: CI=true npm run build
-      - run:
-          name: npm run deploy
-          command: npm run deploy:$PORTFOLIO_ENV
+#      - checkout
+#
+#      - restore_cache:
+#          key: npm-{{ checksum "package.json" }}
+#      - run: npm install
+#      - save_cache:
+#          key: npm-{{ checksum "package.json" }}
+#          paths:
+#            - node_modules
+#
+#      - run:
+#          name: npm run build
+#          command: CI=true npm run build
+#      - run:
+#          name: npm run deploy
+#          command: npm run deploy:$PORTFOLIO_ENV
 
   deploy_testing:
     <<: *deploy
