@@ -25,30 +25,28 @@ jobs:
     steps:
       - run:
           name: Install dependencies
-          working_directory: /tmp
+          working_directory: /
           command: |
             curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
             sudo ./aws/install
 
-      - run: aws --version
+      - checkout
 
-#      - checkout
-#
-#      - restore_cache:
-#          key: npm-{{ checksum "package.json" }}
-#      - run: npm install
-#      - save_cache:
-#          key: npm-{{ checksum "package.json" }}
-#          paths:
-#            - node_modules
-#
-#      - run:
-#          name: npm run build
-#          command: CI=true npm run build
-#      - run:
-#          name: npm run deploy
-#          command: npm run deploy:$PORTFOLIO_ENV
+      - restore_cache:
+          key: npm-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          key: npm-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
+      - run:
+          name: npm run build
+          command: CI=true npm run build
+      - run:
+          name: npm run deploy
+          command: npm run deploy:$PORTFOLIO_ENV
 
   deploy_testing:
     <<: *deploy
@@ -84,17 +82,17 @@ workflows:
           filters:
             branches:
               only: master
-#      - test:
-#          filters:
-#            branches:
-#              only: master
-#      - deploy_staging:
-#          requires:
-#            - test
-#      - approve:
-#          type: approval
-#          requires:
-#            - deploy_staging
-#      - deploy_production:
-#          requires:
-#            - approve
+      - test:
+          filters:
+            branches:
+              only: master
+      - deploy_staging:
+          requires:
+            - test
+      - approve:
+          type: approval
+          requires:
+            - deploy_staging
+      - deploy_production:
+          requires:
+            - approve
