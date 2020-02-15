@@ -32,25 +32,37 @@ jobs:
             export PATH=~/.local/bin:$PATH
             source ~/.profile
             pip3 install awscli --upgrade --user
+            aws --version
 
-      - run: aws --version
+      -run: aws --verion
 
-      - checkout
+#      - run: sudo apt-get update && sudo apt-get install python3-pip groff-base
+#      - run: sudo pip3 install awscli
 
-      - restore_cache:
-          key: npm-{{ checksum "package.json" }}
-      - run: npm install
-      - save_cache:
-          key: npm-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+#      - run:
+#          name: install awscli
+#          working_directory: /tmp
+#          command: |
+#            curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+#            unzip awscliv2.zip
+#            sudo ./aws/install
 
-      - run:
-          name: npm run build
-          command: CI=true npm run build
-      - run:
-          name: npm run deploy
-          command: npm run deploy:$PORTFOLIO_ENV
+#      - checkout
+#
+#      - restore_cache:
+#          key: npm-{{ checksum "package.json" }}
+#      - run: npm install
+#      - save_cache:
+#          key: npm-{{ checksum "package.json" }}
+#          paths:
+#            - node_modules
+#
+#      - run:
+#          name: npm run build
+#          command: CI=true npm run build
+#      - run:
+#          name: npm run deploy
+#          command: npm run deploy:$PORTFOLIO_ENV
 
   deploy_testing:
     <<: *deploy
