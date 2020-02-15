@@ -32,7 +32,7 @@ jobs:
             sudo apt-get install python3
             curl -O https://bootstrap.pypa.io/get-pip.py
             python3 get-pip.py --user
-            pip install awscli --upgrade --user
+            sudo pip install awscli --upgrade --user
 
 #      - run: sudo apt-get update && sudo apt-get install python3-pip groff-base
 #      - run: sudo pip3 install awscli
