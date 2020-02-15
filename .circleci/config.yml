@@ -34,7 +34,7 @@ jobs:
             pip3 install awscli --upgrade --user
             aws --version
 
-      -run: aws --verion
+      - run: aws --verion
 
 #      - run: sudo apt-get update && sudo apt-get install python3-pip groff-base
 #      - run: sudo pip3 install awscli
