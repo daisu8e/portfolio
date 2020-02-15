@@ -23,8 +23,20 @@ jobs:
     docker:
       - image: circleci/node:12.7.0
     steps:
-      - run: sudo apt-get update && sudo apt-get install python3-pip groff-base
-      - run: sudo pip3 install awscli --ignore-installed six
+
+      - run:
+          name: install awscli
+          working_directory: /tmp
+          command: |
+            sudo apt-get update
+            sudo apt-get install python3
+            curl -O https://bootstrap.pypa.io/get-pip.py
+            python3 get-pip.py --user
+            pip install awscli --upgrade --user
+
+#      - run: sudo apt-get update && sudo apt-get install python3-pip groff-base
+#      - run: sudo pip3 install awscli
+
 #      - run:
 #          name: install awscli
 #          working_directory: /tmp
