@@ -32,18 +32,8 @@ jobs:
             export PATH=~/.local/bin:$PATH
             source ~/.profile
             pip3 install awscli --upgrade --user
-            aws --version
 
-#      - run: sudo apt-get update && sudo apt-get install python3-pip groff-base
-#      - run: sudo pip3 install awscli
-
-#      - run:
-#          name: install awscli
-#          working_directory: /tmp
-#          command: |
-#            curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-#            unzip awscliv2.zip
-#            sudo ./aws/install
+      - run: aws --version
 
       - checkout
 
