@@ -31,8 +31,8 @@ jobs:
             python3 get-pip.py --user
             export PATH=~/.local/bin:$PATH
             source ~/.profile
-            pip3 --version
-#            pip3 install awscli --upgrade --user
+            pip3 install awscli --upgrade --user
+            aws --version
 
 #      - run: sudo apt-get update && sudo apt-get install python3-pip groff-base
 #      - run: sudo pip3 install awscli
