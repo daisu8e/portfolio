@@ -1,39 +1,73 @@
+import React, {FC} from 'react';
 import styled from 'styled-components';
-import {mix} from 'polished';
+import {mix, rgba} from 'polished';
+
+import {GitHub as _GitHub, LinkedIn as _LinkedIn, Resume as _Resume} from 'App/views/components/links';
 
 const black =  mix(0.8, 'black', 'white');
 
 export const Name = styled.div`
   position: fixed;
-  left: 50%;
-  top: 15%;
-  transform: translate(-50%, -15%);
-  width: 100%;
-  text-align: center;
+  left: 0;
+  top: 0;
   color: ${black};
   & > h1 {
-    font-size: ${3 * 22}px;
+    font-size: ${3 * 55 + 1}px;
   }
   & > p {
-    font-size: 15px;
-    margin-top: 15px;
+    font-size: ${3 * 10}px;
+    margin-left: 15px;
+    & > span {
+      display: inline-block;
+      margin-left: 15px;
+      &:nth-child(1) {
+        margin-left: ${15 * 2}px;
+      }
+    }
   }
 `;
 
+export const GitHub: FC = () => <_GitHub size={3 * 8}/>;
+export const LinkedIn: FC = () => <_LinkedIn size={3 * 8}/>;
+export const Resume: FC = () => <_Resume size={3 * 8}/>;
+
 export const Menu = styled.div`
   position: fixed;
-  left: 50%;
-  top: 60%;
-  transform: translate(-50%, -60%);
-  width: 1000px;
+  right: 15px;
+  bottom: 15px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1px;
   & > a {
-    color: ${black};
+    width: 250px;
+    height: 250px;
+    color: white;
+    &:nth-child(1) {
+      background-color: ${rgba(black, 0.4)};
+    }
+    &:nth-child(2) {
+      background-color: ${rgba(black, 0.6)};
+    }
+    &:nth-child(3) {
+      background-color: ${rgba(black, 0.8)};
+    }
+    &:nth-child(4) {
+      background-color: ${rgba(black, 1.0)};
+    }
     &:hover {
-      color: white;
-      background-color: ${black};
+      color: ${black};
+      background-color: white;
+      position: relative;
+      &:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        content: "";
+        border: 1px solid ${black};
+        box-sizing: border-box;
+      }
     }
   }
 `;
@@ -56,23 +90,5 @@ export const Content = styled.div`
         padding-right: 8px;
       }
     }
-  }
-`;
-
-export const Sns = styled.div`
-  position: fixed;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5px;
-  & > a {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    color: ${black};
-    font-size: ${3 * 8}px;
   }
 `;
