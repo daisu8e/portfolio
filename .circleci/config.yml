@@ -23,14 +23,6 @@ jobs:
     docker:
       - image: circleci/node:12.7.0
     steps:
-      - run:
-          name: install awscli
-          working_directory: /tmp
-          command: |
-            curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            unzip awscliv2.zip
-            sudo ./aws/install
-
       - checkout
 
       - restore_cache:
@@ -77,11 +69,6 @@ workflows:
             - test
 
   production:
-    jobs:
-      - deploy_staging:
-          filters:
-            branches:
-              only: master
       - test:
           filters:
             branches:
