@@ -1,8 +1,5 @@
-import React, {FC} from 'react';
 import styled from 'styled-components';
 import {mix, rgba} from 'polished';
-
-import {GitHub as _GitHub, LinkedIn as _LinkedIn, Resume as _Resume} from 'App/views/components/links';
 
 const black =  mix(0.8, 'black', 'white');
 
@@ -17,8 +14,9 @@ export const Name = styled.div`
   & > p {
     font-size: ${3 * 10}px;
     margin-left: 15px;
-    & > span {
+    & > a {
       display: inline-block;
+      font-size: ${3 * 8}px;
       margin-left: 15px;
       &:nth-child(1) {
         margin-left: ${15 * 2}px;
@@ -26,10 +24,6 @@ export const Name = styled.div`
     }
   }
 `;
-
-export const GitHub: FC = () => <_GitHub size={3 * 8}/>;
-export const LinkedIn: FC = () => <_LinkedIn size={3 * 8}/>;
-export const Resume: FC = () => <_Resume size={3 * 8}/>;
 
 export const Menu = styled.div`
   position: fixed;
