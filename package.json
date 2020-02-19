@@ -24,6 +24,7 @@
     "@types/redux": "^3.6.0",
     "@types/styled-components": "^4.4.2",
     "dayjs": "^1.8.20",
+    "deploy-aws-s3-cloudfront": "^2.3.1",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
