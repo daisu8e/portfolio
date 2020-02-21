@@ -3,15 +3,30 @@ import {mix} from 'polished';
 
 const black =  mix(0.8, 'black', 'white');
 
-interface Size { size: number; }
-
-export const Root = styled.div<Size>`
-  width: ${p => p.size}px;
-  height: ${p => p.size}px;
-  line-height: ${p => p.size}px;
-  border-radius: ${p => p.size / 2}px;
+export const Root = styled.div`
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
   background-color: ${black};
-  text-align: center;
-  font-size: ${p => p.size * 0.75}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.9em;
+    height: 0.9em;
+    border: 0.04em solid white;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+`;
+
+export const Text = styled.div`
+  font-size: 0.68em;
   color: white;
 `;

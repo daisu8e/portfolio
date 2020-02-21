@@ -1,5 +1,11 @@
 import React, {FC} from 'react';
 
-import {Root} from './index.styled';
+import {Root, Text} from './index.styled';
 
-export const Logo: FC = () => <Root size={100}>D.</Root>;
+export const Logo: FC = () => {
+  return (
+    <Root>
+      <Text>D.</Text>
+    </Root>
+  );
+};
