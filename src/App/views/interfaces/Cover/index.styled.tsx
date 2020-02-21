@@ -32,7 +32,7 @@ export const Name = styled.div`
     }
   }
   @media (max-aspect-ratio: 1/1) {
-    font-size: 15.5vw;
+    font-size: 13vw;
     & > h1 {
       margin: 0.2vw;
       font-size: 1em;
@@ -103,7 +103,17 @@ export const Menu = styled.div`
       }
     }
   }
-  @media (min-aspect-ratio: 4/3) {
+  @media (min-aspect-ratio: 16/9) {
+    right: 1.25vw;
+    bottom: 1.25vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    & > a {
+      width: 20vw;
+      height: 20vw;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
     right: 1.25vw;
     bottom: 1.25vw;
     grid-template-columns: repeat(4, 1fr);
@@ -119,11 +129,17 @@ export const Menu = styled.div`
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     & > a {
-      width: 29vw;
-      height: 29vw;
+      width: 25vw;
+      height: 25vw;
       &:nth-child(1) {
           grid-column-start: 3;
       }
+    }
+  }
+  @media (max-aspect-ratio: 1/1) {
+    & > a {
+      width: 27.5vw;
+      height: 27.5vw;
     }
   }
   @media (max-aspect-ratio: 3/4) {
@@ -171,29 +187,55 @@ export const Content = styled.div`
       }
     }
   }
-  @media (min-aspect-ratio: 4/3) {
+  @media (min-aspect-ratio: 16/9) {
     font-size: 3vw;
     padding: 1.5vw;
     & > h2 {
       font-size: 1em;
     }
     & > ul {
-      margin-top: 1.5vw;
+      margin-top: 1.25vw;
+      & > li {
+        font-size: 0.4em;
+      }
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    font-size: 3.25vw;
+    padding: 1.5vw;
+    & > h2 {
+      font-size: 1em;
+    }
+    & > ul {
+      margin-top: 1.25vw;
       & > li {
         font-size: 0.4em;
       }
     }
   }
   @media (max-aspect-ratio: 4/3) {
-    font-size: 4vw;
+    font-size: 3.5vw;
     padding: 2vw;
     & > h2 {
       font-size: 1em;
     }
     & > ul {
-      margin-top: 1.5vw;
+      margin-top: 1.25vw;
       & > li {
         font-size: 0.45em;
+      }
+    }
+  }
+  @media (max-aspect-ratio: 1/1) {
+    font-size: 3.75vw;
+    padding: 2.25vw;
+    & > h2 {
+      font-size: 1em;
+    }
+    & > ul {
+      margin-top: 1.25vw;
+      & > li {
+        font-size: 0.50em;
       }
     }
   }
