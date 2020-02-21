@@ -34,6 +34,24 @@ export const Name = styled.div`
   @media (max-aspect-ratio: 1/1) {
     font-size: 15.5vw;
     & > h1 {
+      margin: 0.2vw;
+      font-size: 1em;
+    }
+    & > p {
+      margin-left: 1.1vw;
+      font-size: 0.25em;
+      & > a {
+        margin-left: 1vw;
+        font-size: 0.8em;
+        &:nth-child(1) {
+          margin-left: 1.5vw;
+        }
+      }
+    }
+  }
+  @media (max-aspect-ratio: 3/4) {
+    font-size: 15.5vw;
+    & > h1 {
       margin: 2.5vw;
       font-size: 1em;
     }

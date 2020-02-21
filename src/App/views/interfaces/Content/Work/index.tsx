@@ -22,7 +22,7 @@ export const Work: FC<Props> = props => {
   return (
     <Body>
       <h1>Work</h1>
-      <Year><span>2020</span></Year>
+      <Year>2020</Year>
       <Period>
         <Project>
           <h2>Portfolio</h2>
@@ -45,7 +45,7 @@ export const Work: FC<Props> = props => {
           </ul>
         </Project>
       </Period>
-      <Year><span>2019</span></Year>
+      <Year>2019</Year>
       <Period>
         <Project>
           <h2>Learning English & Mobile App Development</h2>
@@ -62,7 +62,7 @@ export const Work: FC<Props> = props => {
           </ul>
         </Project>
       </Period>
-      <Year><span>2017</span></Year>
+      <Year>2017</Year>
       <Period>
         <Project>
           <h2>Cart Recovery</h2>
@@ -117,7 +117,7 @@ export const Work: FC<Props> = props => {
           </ul>
         </Project>
       </Period>
-      <Year><span>2014</span></Year>
+      <Year>2014</Year>
       <Period>
         <Project>
           <h2>Submit! Recommendation</h2>
@@ -175,7 +175,7 @@ export const Work: FC<Props> = props => {
           </ul>
         </Project>
       </Period>
-      <Year><span>2012</span></Year>
+      <Year>2012</Year>
       <Period>
         <Project>
           <h2>A CRM software service</h2>
@@ -233,7 +233,7 @@ export const Work: FC<Props> = props => {
           </ul>
         </Project>
       </Period>
-      <Year><span>2011</span></Year>
+      <Year>2011</Year>
       <Period>
         <Project>
           <h2>Submit! Mail</h2>
@@ -265,7 +265,7 @@ export const Work: FC<Props> = props => {
           </ul>
         </Project>
       </Period>
-      <Year><span>2010</span></Year>
+      <Year>2010</Year>
       <Period>
         <Project>
           <h2>EC.DRAGON</h2>
@@ -293,7 +293,7 @@ export const Work: FC<Props> = props => {
           </ul>
         </Project>
       </Period>
-      <Year><span>2009</span></Year>
+      <Year>2009</Year>
       <Before/>
     </Body>
   );

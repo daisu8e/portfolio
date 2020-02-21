@@ -4,6 +4,9 @@ import {mix} from 'polished';
 const black =  mix(0.8, 'black', 'white');
 
 export const Body = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 5vw;
   color: ${black};
   & > h1 {
     font-size: ${3 * 27}px;
@@ -36,8 +39,13 @@ export const Layer = styled.div`
 
 export const Columns2 = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 function list() {

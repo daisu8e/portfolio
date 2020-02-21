@@ -4,6 +4,9 @@ import {mix} from 'polished';
 const black =  mix(0.8, 'black', 'white');
 
 export const Body = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 5vw;
   color: ${black};
   & > h1 {
     font-size: ${3 * 27}px;
@@ -23,7 +26,6 @@ export const Body = styled.div`
       margin-bottom: 15px;
       font-size: ${3 * 5}px;
       line-height: 1.5;
-      text-align: justify;
       & > em {
         font-weight: bold;
       }
@@ -42,7 +44,17 @@ export const Body = styled.div`
 `;
 
 export const Figure = styled.div`
-  width: 500px;
-  margin: ${15 * 3}px auto;
+  position: relative;
+  margin: ${16 * 3}px 0;
+//  width: 500px;
+//  margin: ${15 * 3}px auto;
   text-align: center;
+  @media (min-width: 320px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  @media (max-width: ${320 + 16 * 2}px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;

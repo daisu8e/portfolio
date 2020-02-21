@@ -27,6 +27,7 @@ export const Content: FC<Props> = props => {
 
   return (
     <>
+      {/*
       <Name>
         <Link to="">{author.name}</Link>
       </Name>
@@ -41,6 +42,7 @@ export const Content: FC<Props> = props => {
         <a href="https://www.linkedin.com/in/daisu8e/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin}/></a>
         <a href="/daisuke-katsumata.pdf" target="_blank"><FontAwesomeIcon icon={faFilePdf}/></a>
       </Sns>
+      */}
       <Body>
         <Switch>
           <Route path="/about" render={p => <About {...p} author={author}/>}/>

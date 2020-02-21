@@ -5,57 +5,58 @@ const black = mix(0.8, 'black', 'white');
 
 export const Root = styled.div`
   position: relative;
-  width: ${500}px;
+  max-width: 600px;
+  @media (min-width: 480px) {
+    min-width: ${(16 * 3) + 248 + (16 * 3)}px;
+  }
+  @media (max-width: 480px) {
+    min-width: 288px;
+  }
+`;
+
+export const Body = styled.div`
+  position: absolute;
+  top: ${48 - 4}px;
+  width: 248px;
+  height: ${4 + ((48 * 3) + (16 * 2)) + 4}px;
+  @media (min-width: 480px) {
+    right: ${16 * 3}px;
+  }
+  @media (max-width: 480px) {
+    right: 50%;
+    transform: translateX(50%);
+  }
 `;
 
 export const ViewControllers = styled.div`
   position: absolute;
-  right: ${15 + 15}px;
-  top: ${50 - 4}px;
-  width: ${250}px;
-  height: ${4 + (50 * 2) + 15 + 4}px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: ${4 + (48 * 2) + 16 + 4}px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
 `;
 
 export const Models = styled.div`
   position: absolute;
-  right: ${15 + 15}px;
-  top: ${50 + ((50 + 15) * 2) - 4}px;
-  width: ${250}px;
-  height: ${4 + 50 + 4}px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: ${4 + 48 + 4}px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
 `;
 
 export const ViewController = styled.div`
-  position: absolute;
-  width: ${((250 + 15) / 3) - 15}px;
-  height: 100%;
-  &:nth-child(1) {
-    left: ${0}px;
-  }
-  &:nth-child(2) {
-    left: ${(250 + 15) / 3}px;
-  }
-  &:nth-child(3) {
-    left: ${(250 + 15) / 3 * 2}px;
-  }
+  position: relative;
   ${object()};
 `;
 
 export const Model = styled.div`
-  position: absolute;
-  width: ${((250 + 15) / 4) - 15}px;
-  height: 100%;
-  &:nth-child(1) {
-    left: ${0}px;
-  }
-  &:nth-child(2) {
-    left: ${(250 + 15) / 4}px;
-  }
-  &:nth-child(3) {
-    left: ${(250 + 15) / 4 * 2}px;
-  }
-  &:nth-child(4) {
-    left: ${(250 + 15) / 4 * 3}px;
-  }
+  position: relative;
   ${object()};
 `;
 
@@ -72,15 +73,17 @@ export const Label = styled.div`
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  line-height: ${20}px;
-  ${Component} > &:nth-child(1) {
-    top: ${5}px;
-  }
-  ${Component} > &:nth-child(2) {
-    bottom: ${5}px;
+  line-height: ${48 - 16 - 16}px;
+  ${Component} > & {
+    &:nth-child(1) {
+      top: 4px;
+    }
+    &:nth-child(2) {
+      bottom: 4px;
+    }
   }
   ${Model} > & {
-    top: ${4 + 15}px;
+    top: ${4 + 16}px;
   }
   ${label()};
 `;
@@ -88,7 +91,7 @@ export const Label = styled.div`
 function object() {
   return css`
     border-radius: 10px;
-    background-color: ${rgba(black, 0.4)};
+    background-color: ${rgba(black, 0.6)};
   `;
 }
 
