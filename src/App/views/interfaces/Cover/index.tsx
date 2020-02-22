@@ -26,7 +26,7 @@ export const Cover: FC<Props> = props => {
   return (
     <>
       <Name>
-        <h1>Daisuke Katsumata</h1>
+        <h1>{author.name}</h1>
         <p>
           Front-end Web Developer
           <a href="https://github.com/daisu8e/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/></a>
