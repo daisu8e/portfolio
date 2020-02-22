@@ -81,3 +81,14 @@ export const Sns = styled.div`
 
 export const Body = styled.div`
 `;
+
+export const Mobile = styled.div`
+  @media (min-width: 480px) {
+    display: none;
+  }
+  @media (max-width: 480px) {
+    display: block;
+  }
+`;
+
+
