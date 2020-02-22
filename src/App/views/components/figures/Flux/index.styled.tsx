@@ -8,37 +8,49 @@ const black = mix(0.8, 'black', 'white');
 
 export const Root = styled.div`
   position: relative;
-  width: ${500}px;
+  max-width: 600px;
+  @media (min-width: 480px) {
+    min-width: ${(16 * 3) + 248 + (16 * 3)}px;
+  }
+  @media (max-width: 480px) {
+    min-width: 288px;
+  }
 `;
 
-export const Area = styled.div`
+export const Body = styled.div`
   position: absolute;
-  right: ${15 + 15}px;
-  top: ${50 - 4}px;
-  width: ${250}px;
-  height: ${4 + 50 + 15 + 50 + 4}px;
-  ${area()}
+  top: ${48 - 4}px;
+  width: 248px;
+  height: ${4 + 48 + 16 + 48 + 4}px;
+  ${body()};
+  @media (min-width: 480px) {
+    right: ${16 * 3}px;
+  }
+  @media (max-width: 480px) {
+    right: 50%;
+    transform: translateX(50%);
+  }
 `;
 
 export const Block = styled.div`
   position: absolute;
-  width: ${100}px;
-  height: ${30}px;
+  width: ${96}px;
+  height: ${32}px;
   &:nth-child(1) {
-    left: ${15}px;
-    top: ${10 + 4}px;
+    left: ${16}px;
+    top: ${8 + 4}px;
   }
   &:nth-child(2) {
-    left: ${15}px;
-    bottom: ${10 + 4}px;
+    left: ${16}px;
+    bottom: ${8 + 4}px;
   }
   &:nth-child(3) {
-    right: ${15}px;
-    bottom: ${10 + 4}px;
+    right: ${16}px;
+    bottom: ${8 + 4}px;
   }
   &:nth-child(4) {
-    right: ${15}px;
-    top: ${10 + 4}px;
+    right: ${16}px;
+    top: ${8 + 4}px;
   }
   ${block()}
 `;
@@ -54,27 +66,27 @@ export const Label = styled.div`
 export const Relation = styled.div`
   position: absolute;
   &:nth-child(5) {
-    left: ${15 + (100 / 2) - ((10 + 15 + 10) / 2)}px;
-    top: ${4 + 10 + 30}px;
+    left: ${16 + (96 / 2) - ((8 + 16 + 8) / 2)}px;
+    top: ${4 + 8 + 32}px;
   }
   &:nth-child(6) {
-    left: ${15 + 100}px;
-    bottom: ${4 + 10 + (30 / 2) - ((250 - (15 + 100) - (100 + 15)) / 2)}px;
+    left: ${16 + 96}px;
+    bottom: ${4 + 8 + (32 / 2) - ((248 - (16 + 96) - (96 + 16)) / 2)}px;
   }
   &:nth-child(7) {
-    right: ${15 + (100 / 2) - ((10 + 15 + 10) / 2)}px;
-    top: ${4 + 10 + 30}px;
+    right: ${16 + (96 / 2) - ((8 + 16 + 8) / 2)}px;
+    top: ${4 + 8 + 32}px;
   }
 `;
 
-export const Arrow1: FC = () => <Arrow length={10 + 15 + 10} point={8} color={'white'} angle={90}/>;
-export const Arrow2: FC = () => <Arrow length={250 - (15 + 100) - (100 + 15)} point={8} color={'white'} angle={0}/>;
-export const Arrow3: FC = () => <Arrow length={10 + 15 + 10} point={8} color={'white'} angle={-90}/>;
+export const Arrow1: FC = () => <Arrow length={8 + 16 + 8} point={8} color={'white'} angle={90}/>;
+export const Arrow2: FC = () => <Arrow length={248 - (16 + 96) - (96 + 16)} point={8} color={'white'} angle={0}/>;
+export const Arrow3: FC = () => <Arrow length={8 + 16 + 8} point={8} color={'white'} angle={-90}/>;
 
-function area() {
+function body() {
   return css`
     border-radius: 10px;
-    background-color: ${rgba(black, 0.4)};
+    background-color: ${rgba(black, 0.6)};
   `;
 }
 

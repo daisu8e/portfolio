@@ -5,32 +5,45 @@ const black = mix(0.8, 'black', 'white');
 
 export const Root = styled.div`
   position: relative;
-  width: ${500}px;
+  max-width: ${600}px;
+  min-width: ${240}px;
+  @media (min-width: 480px) {
+    min-width: ${(16 * 3) + 248 + (16 * 3)}px;
+  }
+  @media (max-width: 480px) {
+    min-width: 288px;
+  }
 `;
 
 export const Mvc = styled.div`
   position: absolute;
-  right: ${15 + 15}px;
-  top: ${50 - 4}px;
-  width: 250px;
-  height: ${4 + 50 + 15 + 50 + 4}px;
+  top: ${(48 - 4) + (4 + 16 + 3)}px;
+  width: ${8 * 6}px;
+  height: ${(2 + 16 + 2) * 3 + 4 * 2}px;
+  @media (min-width: 480px) {
+    right: ${(16 * 3) + (16 * 2)}px;
+  }
+  @media (max-width: 480px) {
+    left: 50%;
+    transform: translateX(${(248 / 2) - (8 * 6) - (16 * 2)}px);
+  }
 `;
 
 export const ViewController = styled.div`
   position: absolute;
-  right: ${9 + (9 * 3)}px;
-  top: ${(3 + 15 + 3 + 1)}px;
-  width: ${13 * 3}px;
-  height: ${(3 + 15 + 3) * 2 + 4}px;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: ${(2 + 16 + 2) * 2 + 4}px;
   ${object()};
 `;
 
 export const Model = styled.div`
   position: absolute;
-  right: ${9 + (9 * 3)}px;
-  top: ${(3 + 15 + 3 + 1) + (3 + 15 + 3 + 4) * 2}px;
-  width: ${13 * 3}px;
-  height: ${(3 + 15 + 3)}px;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: ${2 + 16 + 2}px;
   ${object()};
 `;
 
@@ -38,15 +51,17 @@ export const Label = styled.div`
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  line-height: ${15}px;
-  ${ViewController} > &:nth-child(1) {
-    top: ${1 + 3}px;
-  }
-  ${ViewController} > &:nth-child(2) {
-    bottom: ${1 + 3}px;
+  line-height: 16px;
+  ${ViewController} > & {
+    &:nth-child(1) {
+      top: 2px;
+    }
+    &:nth-child(2) {
+      bottom: 2px;
+    }
   }
   ${Model} > & {
-    top: ${1 + 3}px;
+    top: 2px;
   }
   ${label()};
 `;
@@ -54,7 +69,7 @@ export const Label = styled.div`
 function object() {
   return css`
     border-radius: 4px;
-    background-color: ${rgba(black, 0.4)};
+    background-color: ${rgba(black, 0.6)};
   `;
 }
 

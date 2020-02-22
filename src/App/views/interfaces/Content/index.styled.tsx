@@ -80,8 +80,15 @@ export const Sns = styled.div`
 `;
 
 export const Body = styled.div`
-  //  margin: 80px 20vw;
-  //  min-width: 800px;
-  margin: 80px auto;
-  width: 800px;
 `;
+
+export const Mobile = styled.div`
+  @media (min-width: 480px) {
+    display: none;
+  }
+  @media (max-width: 480px) {
+    display: block;
+  }
+`;
+
+
