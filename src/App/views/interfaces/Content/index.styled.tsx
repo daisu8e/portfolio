@@ -3,18 +3,40 @@ import {mix, rgba} from 'polished';
 
 const black =  mix(0.8, 'black', 'white');
 
-export const Name = styled.div`
+export const Header = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  font-size: ${3 * 8}px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 4px;
-  box-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.8);
+  width: ${100 / 8}vw;
+  height: ${100 / 8}vw;
+  background-image: linear-gradient(
+      ${45 * 3}deg,
+      ${black} ${0}%, ${black} ${50}%,
+      transparent ${50}%
+  );
+  color: ${black};
   & > a {
-    display: block;
-    padding: 15px;
-    color: ${black};
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    & > div {
+      position: absolute;
+      &:nth-child(1) {
+        left: 0.5vw;
+        top: 0.5vw;
+        font-size: ${100 / 8 / 2}vw;
+      }
+      &:nth-child(2) {
+        bottom: 0;
+        width: 100%;
+        text-align: right;
+        font-size: ${1.9}vw;
+        & > div {
+          margin-top: 0.2vw;
+          font-size: ${0.9}vw;
+        }
+      }
+    }
   }
 `;
 
@@ -23,56 +45,34 @@ export const Menu = styled.div`
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  width: ${100 / 8}vw;
+  text-align: right;
   & > a {
     display: block;
-    width: ${15 * 14}px;
-    padding: 15px;
-    font-size: ${3 * 8}px;
+    padding: 8px 0;
+    font-size: ${2}vw;
     color: ${black};
-    text-align: right;
-    &.here {
-      color: white;
-      background-color: ${rgba(black, 0.4)};
-    }
-    &:hover,
-    &.here:hover {
-      color: white;
-      background-color: ${black};
-    }
-  }
-`;
-
-export const Content = styled.div`
-  color: ${black};
-  & > h2 {
-    font-size: ${3 * 13}px;
-    & > a {
-      text-decoration-line: none;
-      color: ${black};
-    }
-  }
-  & > ul {
-    margin-top: ${15 * 2}px;
-    list-style: none;
-    padding: 0;
-    & > li {
-      line-height: 2;
-      &:before {
-        content: '-';
-        padding-left: 8px;
-        padding-right: 8px;
-      }
-    }
+//    &.here {
+//      color: white;
+//      background-color: ${rgba(black, 0.4)};
+//    }
+//    &:hover,
+//    &.here:hover {
+//      color: white;
+//      background-color: ${black};
+//    }
   }
 `;
 
 export const Sns = styled.div`
   position: fixed;
-  left: 0;
+  left: calc(${100 / 8}vw - ${3 * 6}px);
   bottom: 15px;
+  width: ${3 * 6}px;
+  text-align: center;
   & > a {
     display: block;
-    padding: 7px 15px;
+    padding: 4px 0;
 //    margin-top: ${3 * 5}px;
     font-size: ${3 * 6}px;
     color: ${black};
@@ -80,15 +80,31 @@ export const Sns = styled.div`
 `;
 
 export const Body = styled.div`
+  @media (min-aspect-ratio: 4/3) {
+    padding-left: 0;
+  }
+  @media (max-aspect-ratio: 4/3) {
+    padding-left: ${100 / 8}vw;
+  }
+  @media (max-aspect-ratio: 1/1) {
+    padding-left: 0;
+  }
 `;
 
-export const Mobile = styled.div`
-  @media (min-width: 480px) {
+export const WideWindow = styled.div`
+  @media (orientation: landscape) {
+    display: block;
+  }
+  @media (orientation: portrait) {
     display: none;
   }
-  @media (max-width: 480px) {
+`;
+
+export const NarrowWindow = styled.div`
+  @media (orientation: landscape) {
+    display: none;
+  }
+  @media (orientation: portrait) {
     display: block;
   }
 `;
-
-
