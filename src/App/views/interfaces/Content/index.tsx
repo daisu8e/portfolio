@@ -3,11 +3,9 @@ import React, {FC} from 'react';
 import {Author} from 'App/models/entities/Author';
 
 import {Link, Switch, Route, Redirect} from 'react-router-dom';
-import {faEllipsisV} from '@fortawesome/free-solid-svg-icons';
 import {faFilePdf} from '@fortawesome/free-regular-svg-icons';
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import {MobileNav} from 'App/views/components/MobileNav';
-import {Triangle} from 'App/views/components/Triangle';
 import {Logo} from 'App/views/components/Logo';
 import {About} from './About';
 import {Work} from './Work';
