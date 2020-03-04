@@ -1,5 +1,4 @@
 import React, {FC, useEffect} from 'react';
-import _ from 'lodash';
 
 import {Author} from 'App/models/entities/Author';
 

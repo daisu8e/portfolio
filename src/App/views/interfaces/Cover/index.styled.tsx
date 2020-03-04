@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import {mix, rgba} from 'polished';
+import {mix} from 'polished';
 
 const black =  mix(0.8, 'black', 'white');
 
