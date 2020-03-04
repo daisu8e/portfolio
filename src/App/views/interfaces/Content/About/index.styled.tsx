@@ -10,6 +10,7 @@ export const Body = styled.div`
   color: ${black};
   & > h1 {
     font-size: ${3 * 27}px;
+//    font-size: ${3 * 40}px;
     text-transform: uppercase;
     margin-bottom: 30px;
   }
