@@ -54,6 +54,9 @@ export const Before = styled(Period)`
 export const Project = styled.div`
   & > h2 {
     font-size: ${3 * 9}px;
+    & > a {
+      text-decoration: underline;
+    }
   }
 
   & > p {
@@ -73,6 +76,10 @@ export const Project = styled.div`
     & > ul > li {
       font-size: ${3 * 5}px;
       line-height: 1.5;
+      
+      & a {
+        text-decoration: underline;
+      }
 
       & > em {
         font-weight: bold;
