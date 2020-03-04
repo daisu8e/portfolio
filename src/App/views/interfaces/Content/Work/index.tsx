@@ -27,7 +27,7 @@ export const Work: FC<Props> = props => {
       <Year>2020</Year>
       <Period>
         <Project>
-          <h2><a href="https://daisu8e.com/" target="_blank">Portfolio</a></h2>
+          <h2><a href="https://daisu8e.com/" target="_blank" rel="noopener noreferrer">Portfolio</a></h2>
           <p>
             Dec 2019 - Feb 2020
           </p>
@@ -44,8 +44,8 @@ export const Work: FC<Props> = props => {
             <li>AWS: Route53, ACM, CloudFront, S3</li>
             <li>Terraform</li>
             <li>CircleCI</li>
-            <li><a href="https://github.com/daisu8e/portfolio/" target="_blank"><FontAwesomeIcon icon={faGithub}/> daisu8e/portfolio</a></li>
-            <li><a href="https://github.com/daisu8e/portfolio-infrastructure/" target="_blank"><FontAwesomeIcon icon={faGithub}/> daisu8e/portfolio-infrastructure</a></li>
+            <li><a href="https://github.com/daisu8e/portfolio/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/> daisu8e/portfolio</a></li>
+            <li><a href="https://github.com/daisu8e/portfolio-infrastructure/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/> daisu8e/portfolio-infrastructure</a></li>
           </ul>
         </Project>
       </Period>
@@ -69,7 +69,7 @@ export const Work: FC<Props> = props => {
       <Year>2017</Year>
       <Period>
         <Project>
-          <h2><a href="https://www.cart-rcv.jp/" target="_blank">Cart Recovery</a></h2>
+          <h2><a href="https://www.cart-rcv.jp/" target="_blank" rel="noopener noreferrer">Cart Recovery</a></h2>
           <p>
             e-Agency : Sep 2014 - Sep 2017
           </p>
@@ -124,7 +124,7 @@ export const Work: FC<Props> = props => {
       <Year>2014</Year>
       <Period>
         <Project>
-          <h2><a href="https://recommend.submit.ne.jp/" target="_blank">Submit! Recommendation</a></h2>
+          <h2><a href="https://recommend.submit.ne.jp/" target="_blank" rel="noopener noreferrer">Submit! Recommendation</a></h2>
           <p>
             e-Agency : Oct 2012 - Sep 2014
           </p>
@@ -240,7 +240,7 @@ export const Work: FC<Props> = props => {
       <Year>2011</Year>
       <Period>
         <Project>
-          <h2><a href="https://www.submit.ne.jp/mail/" target="_blank">Submit! Mail</a></h2>
+          <h2><a href="https://www.submit.ne.jp/mail/" target="_blank" rel="noopener noreferrer">Submit! Mail</a></h2>
           <p>
             e-Agency : Oct 2010 - Mar 2011
           </p>
