@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {mix, rgba} from 'polished';
+import {mix} from 'polished';
 
 const black =  mix(0.8, 'black', 'white');
 
@@ -31,9 +31,41 @@ export const Header = styled.div`
         width: 100%;
         text-align: right;
         font-size: ${1.9}vw;
-        & > div {
-          margin-top: 0.2vw;
-          font-size: ${0.9}vw;
+        & > small {
+          display: block;
+          margin-top: 0.2em;
+          margin-right: 0.1em;
+          font-size: 0.5em;
+        }
+      }
+    }
+  }
+`;
+
+export const MobileHeader = styled.div`
+  height: ${(32 * 2 + 4) / 2}px;
+  & > div {
+    position: fixed;
+    width: ${32 * 2 + 4}px;
+    height: ${32 * 2 + 4}px;
+    background-image: linear-gradient(
+        ${45 * 3}deg,
+        ${black} ${0}%, ${black} ${50}%,
+        transparent ${50}%
+    );
+    color: ${black};
+    & > a {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      & > div {
+        position: absolute;
+        &:nth-child(1) {
+          left: 4px;
+          top: 4px;
+          font-size: 32px;
         }
       }
     }
@@ -52,15 +84,13 @@ export const Menu = styled.div`
     padding: 8px 0;
     font-size: ${2}vw;
     color: ${black};
-//    &.here {
-//      color: white;
-//      background-color: ${rgba(black, 0.4)};
-//    }
-//    &:hover,
-//    &.here:hover {
-//      color: white;
-//      background-color: ${black};
-//    }
+    &.here {
+      text-decoration: underline;
+    }
+    &:hover,
+    &.here:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -73,7 +103,6 @@ export const Sns = styled.div`
   & > a {
     display: block;
     padding: 4px 0;
-//    margin-top: ${3 * 5}px;
     font-size: ${3 * 6}px;
     color: ${black};
   }

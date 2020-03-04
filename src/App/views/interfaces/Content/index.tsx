@@ -12,7 +12,7 @@ import {Work} from './Work';
 import {Theory} from './Theory';
 import {Skills} from './Skills';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {Menu, Sns, Header, Body, WideWindow, NarrowWindow} from './index.styled';
+import {Menu, Sns, Header, MobileHeader, Body, WideWindow, NarrowWindow} from './index.styled';
 
 interface Props {
   author: Author;
@@ -21,10 +21,10 @@ interface Props {
 
 export const Content: FC<Props> = props => {
 
-  const {author} = props;
+  const {author, location} = props;
 
-  function getHereClass(location: string): string {
-    return props.location.pathname === location ? 'here' : '';
+  function here(pathname: string): string {
+    return location.pathname === pathname ? 'here' : '';
   }
 
   return (
@@ -33,14 +33,14 @@ export const Content: FC<Props> = props => {
         <Header>
           <Link to="">
             <div><Logo/></div>
-            <div>{author.name} <div>Front-end Web Developer</div></div>
+            <div>{author.name} <small>Front-end Web Developer</small></div>
           </Link>
         </Header>
         <Menu>
-          <Link to="/about" className={getHereClass('/about')}>About</Link>
-          <Link to="/work" className={getHereClass('/work')}>Work</Link>
-          <Link to="/theory" className={getHereClass('/theory')}>Theory</Link>
-          <Link to="/skills" className={getHereClass('/skills')}>Skills</Link>
+          <Link to="/about" className={here('/about')}>About</Link>
+          <Link to="/work" className={here('/work')}>Work</Link>
+          <Link to="/theory" className={here('/theory')}>Theory</Link>
+          <Link to="/skills" className={here('/skills')}>Skills</Link>
         </Menu>
         <Sns>
           <a href="https://github.com/daisu8e/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/></a>
@@ -48,23 +48,15 @@ export const Content: FC<Props> = props => {
           <a href="/daisuke-katsumata.pdf" target="_blank"><FontAwesomeIcon icon={faFilePdf}/></a>
         </Sns>
       </WideWindow>
-      {/*
-
-      <Name>
-        <Link to="">{author.name}</Link>
-      </Name>
-      <Menu>
-        <Link to="/about" className={getHereClass('/about')}>About</Link>
-        <Link to="/work" className={getHereClass('/work')}>Work</Link>
-        <Link to="/theory" className={getHereClass('/theory')}>Theory</Link>
-        <Link to="/skills" className={getHereClass('/skills')}>Skills</Link>
-      </Menu>
-      <Sns>
-        <a href="https://github.com/daisu8e/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/></a>
-        <a href="https://www.linkedin.com/in/daisu8e/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin}/></a>
-        <a href="/daisuke-katsumata.pdf" target="_blank"><FontAwesomeIcon icon={faFilePdf}/></a>
-      </Sns>
-      */}
+      <NarrowWindow>
+        <MobileHeader>
+          <div>
+            <Link to="">
+              <div><Logo/></div>
+            </Link>
+          </div>
+        </MobileHeader>
+      </NarrowWindow>
       <Body>
         <Switch>
           <Route path="/about" render={p => <About {...p} author={author}/>}/>
@@ -74,7 +66,7 @@ export const Content: FC<Props> = props => {
           <Redirect to=""/>
         </Switch>
       </Body>
-      <NarrowWindow><MobileNav/></NarrowWindow>
+      <NarrowWindow><MobileNav location={location}/></NarrowWindow>
     </>
   );
 };

@@ -1,255 +1,114 @@
-import styled from 'styled-components';
-import {mix, rgba} from 'polished';
+import styled, {css} from 'styled-components';
+import {mix} from 'polished';
 
 const black =  mix(0.8, 'black', 'white');
 
-export const Name = styled.div`
+export const Background = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  color: ${black};
-  & > p {
-    & > a {
-      display: inline-block;
-    }
-  }
-  @media (min-aspect-ratio: 1/1) {
-    font-size: 10.5vw;
-    & > h1 {
-      margin: 0.2vw;
-      font-size: 1em;
-    }
-    & > p {
-      margin-left: 1.1vw;
-      font-size: 0.25em;
-      & > a {
-        margin-left: 1vw;
-        font-size: 0.8em;
-        &:nth-child(1) {
-          margin-left: 1.5vw;
-        }
-      }
-    }
-  }
-  @media (max-aspect-ratio: 1/1) {
-    font-size: 13vw;
-    & > h1 {
-      margin: 0.2vw;
-      font-size: 1em;
-    }
-    & > p {
-      margin-left: 1.1vw;
-      font-size: 0.25em;
-      & > a {
-        margin-left: 1vw;
-        font-size: 0.8em;
-        &:nth-child(1) {
-          margin-left: 1.5vw;
-        }
-      }
-    }
-  }
-  @media (max-aspect-ratio: 3/4) {
-    font-size: 15.5vw;
-    & > h1 {
-      margin: 2.5vw;
-      font-size: 1em;
-    }
-    & > p {
-      margin-left: 4vw;
-      font-size: 0.25em;
-      & > a {
-        margin-left: 2vw;
-        font-size: 0.8em;
-        &:nth-child(1) {
-          margin-left: 3vw;
-        }
-      }
-    }
-  }
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+      ${45 * 3}deg,
+      ${black} ${0}%, ${black} ${50}%,
+      transparent ${50}%
+  );
 `;
 
-export const Menu = styled.div`
+export const Artwork = styled.div`
   position: fixed;
-  display: grid;
-  grid-gap: 1px;
-  & > a {
-    color: white;
-    &:nth-child(1) {
-      background-color: ${rgba(black, 0.4)};
-    }
-    &:nth-child(2) {
-      background-color: ${rgba(black, 0.6)};
-    }
-    &:nth-child(3) {
-      background-color: ${rgba(black, 0.8)};
-    }
-    &:nth-child(4) {
-      background-color: ${rgba(black, 1.0)};
-    }
-    &:hover {
-      color: ${black};
-      background-color: white;
-      position: relative;
-      &:before {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        content: "";
-        border: 1px solid ${black};
-        box-sizing: border-box;
-      }
-    }
-  }
-  @media (min-aspect-ratio: 16/9) {
-    right: 1.25vw;
-    bottom: 1.25vw;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    & > a {
-      width: 20vw;
-      height: 20vw;
-    }
-  }
-  @media (max-aspect-ratio: 16/9) {
-    right: 1.25vw;
-    bottom: 1.25vw;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    & > a {
-      width: 22vw;
-      height: 22vw;
-    }
-  }
-  @media (max-aspect-ratio: 4/3) {
-    right: 1.5vw;
-    bottom: 1.5vw;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    & > a {
-      width: 25vw;
-      height: 25vw;
-      &:nth-child(1) {
-          grid-column-start: 3;
-      }
-    }
+  left: 0;
+  top: 0;
+  @media (min-aspect-ratio: 1/1) {
+    font-size: calc(58vh + (100vw - 100vh) / 3.4);
   }
   @media (max-aspect-ratio: 1/1) {
-    & > a {
-      width: 27.5vw;
-      height: 27.5vw;
-    }
+    font-size: calc(58vw + (100vh - 100vw) / 3.4);
   }
-  @media (max-aspect-ratio: 3/4) {
-    right: 3vw;
-    bottom: 3vw;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    & > a {
-      width: 40vw;
-      height: 40vw;
-      &:nth-child(1) {
-          grid-column-start: 1;
-      }
-    }
+`;
+
+export const Title = styled.div`
+  position: fixed;
+  right: 16px;
+  text-align: right;
+  color: ${black};
+  @media (min-aspect-ratio: 16/9) {
+    top: 16px;
+    font-size: calc(1.75vw + (100vw - 100vh) * 0.1);
   }
-  @media (max-aspect-ratio: 9/16) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+  @media (max-aspect-ratio: 16/9) {
+    top: calc((100vh / 3) - (100vw - 100vh) * 0.3);
+    font-size: calc(8.5vw - (100vw - 100vh) * 0.025);
+  }
+  @media (max-aspect-ratio: 1/1) {
+    top: calc((100vh / 3) + (100vh - 100vw) * 0.3);
+    font-size: calc(8.5vw + (100vh - 100vw) * 0.025);
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  & > h1 {
+    width: 5em;
+  }
+  & > p {
+    font-size: 0.35em;
+    margin-right: 0.2em;
+    line-height: 2;
     & > a {
-      width: 42vw;
-      height: 42vw;
-      &:nth-child(1) {
-          grid-column-start: 2;
-      }
-      &:nth-child(2) {
-          grid-column-start: 2;
-      }
+      margin-left: 0.8em;
     }
   }
 `;
 
-export const Content = styled.div`
-  & > ul {
-    list-style: none;
-    padding: 0;
-    & > li {
-      line-height: 2;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      &:before {
-        content: '-';
-        padding-left: 3px;
-        padding-right: 8px;
+export const Contents = styled.div`
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  color: ${black};
+  display: flex;
+  & > a {
+    display: block;
+    margin-left: 0.8em;
+    &:hover {
+      & > h2 {
+        text-decoration: underline;
       }
     }
+    & > ul {
+      & > li {
+        font-size: 0.3em;
+      }
+    }
+    ${list()};
   }
   @media (min-aspect-ratio: 16/9) {
-    font-size: 3vw;
-    padding: 1.5vw;
-    & > h2 {
-      font-size: 1em;
-    }
-    & > ul {
-      margin-top: 1.25vw;
-      & > li {
-        font-size: 0.4em;
-      }
-    }
+    font-size: calc(5.1vw - (100vw - 100vh) * 0.025);
   }
   @media (max-aspect-ratio: 16/9) {
-    font-size: 3.25vw;
-    padding: 1.5vw;
-    & > h2 {
-      font-size: 1em;
-    }
-    & > ul {
-      margin-top: 1.25vw;
-      & > li {
-        font-size: 0.4em;
-      }
-    }
-  }
-  @media (max-aspect-ratio: 4/3) {
-    font-size: 3.5vw;
-    padding: 2vw;
-    & > h2 {
-      font-size: 1em;
-    }
-    & > ul {
-      margin-top: 1.25vw;
-      & > li {
-        font-size: 0.45em;
-      }
-    }
+    font-size: calc(5.1vw - (100vw - 100vh) * 0.025);
   }
   @media (max-aspect-ratio: 1/1) {
-    font-size: 3.75vw;
-    padding: 2.25vw;
-    & > h2 {
-      font-size: 1em;
-    }
-    & > ul {
-      margin-top: 1.25vw;
-      & > li {
-        font-size: 0.50em;
-      }
-    }
-  }
-  @media (max-aspect-ratio: 3/4) {
-    font-size: 5vw;
-    padding: 2.5vw;
-    & > h2 {
-      font-size: 1em;
-    }
-    & > ul {
-      margin-top: 1.5vw;
-      & > li {
-        font-size: 0.55em;
-      }
-    }
+    font-size: calc(4.05vw + (100vh - 100vw) * 0.025);
   }
 `;
+
+function list() {
+  return css`
+    & > ul {
+      list-style: none;
+      padding: 0;
+      & > li {
+        line-height: 2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:before {
+          content: '-';
+          padding-left: 0.4em;
+          padding-right: 0.8em;
+        }
+      }
+    }
+  `;
+}

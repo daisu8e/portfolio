@@ -9,7 +9,7 @@ export default {title: 'components/MobileNav'};
 export const Default = () => (
   <MemoryRouter initialEntries={['/']}>
     {_.range(1, 101).map(n => <div key={n}>{n}</div>)}
-    <MobileNav/>
+    <MobileNav location={{pathname: '/about'}}/>
   </MemoryRouter>
 );
 

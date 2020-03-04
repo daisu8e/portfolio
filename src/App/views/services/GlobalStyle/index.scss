@@ -19,9 +19,30 @@ p {
   margin: 0;
 }
 
+b {
+  font-weight: normal;
+}
+
+i {
+  font-style: normal;
+}
+
 a {
+  outline: none;
   color: unset;
   text-decoration: unset;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 0;
+  line-height: unset;
+  font-size: unset;
+  font-family: unset;
+  color: unset;
+  background-color: unset;
+  cursor: pointer;
 }
 
 ul, ol {

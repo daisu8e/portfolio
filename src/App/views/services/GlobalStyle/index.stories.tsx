@@ -27,6 +27,7 @@ const Check = () => <>
   <div><b>{`<b>${text}</b>`}</b></div>
   <div><i>{`<i>${text}</i>`}</i></div>
   <div><a href="">{`<a>${text}</a>`}</a></div>
+  <div><button>{`<button>${text}</button>`}</button></div>
   <ul>
     <li>{`<ul><li>${text}</li></ul>`}</li>
     <li>{`<ul><li>${text}</li></ul>`}</li>
