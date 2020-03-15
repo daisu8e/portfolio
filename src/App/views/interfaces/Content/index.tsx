@@ -6,7 +6,7 @@ import {Link, Switch, Route, Redirect} from 'react-router-dom';
 import {faFilePdf} from '@fortawesome/free-regular-svg-icons';
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import {MobileNav} from 'App/views/components/MobileNav';
-import {Logo} from 'App/views/components/Logo';
+import {SimpleLogo} from 'App/views/components/logos/SimpleLogo';
 import {About} from './About';
 import {Work} from './Work';
 import {Theory} from './Theory';
@@ -32,7 +32,7 @@ export const Content: FC<Props> = props => {
       <WideWindow>
         <Header>
           <Link to="">
-            <div><Logo/></div>
+            <div><SimpleLogo/></div>
             <div>{author.name} <small>Front-end Web Developer</small></div>
           </Link>
         </Header>
@@ -52,7 +52,7 @@ export const Content: FC<Props> = props => {
         <MobileHeader>
           <div>
             <Link to="">
-              <div><Logo/></div>
+              <div><SimpleLogo/></div>
             </Link>
           </div>
         </MobileHeader>

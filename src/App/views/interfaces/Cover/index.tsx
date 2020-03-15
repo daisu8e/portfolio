@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import {faFilePdf} from '@fortawesome/free-regular-svg-icons';
-import {Logo} from 'App/views/components/Logo';
+import {CoolLogo} from 'App/views/components/logos/CoolLogo';
 import {Background, Artwork, Title, Contents} from './index.styled';
 
 interface Props {
@@ -27,7 +27,7 @@ export const Cover: FC<Props> = props => {
   return (
     <>
       <Background/>
-      <Artwork><Logo/></Artwork>
+      <Artwork><CoolLogo/></Artwork>
       <Title>
         <h1>{author.name}</h1>
         <p>
