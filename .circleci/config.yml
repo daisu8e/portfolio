@@ -61,20 +61,24 @@ workflows:
   testing:
     jobs:
       - test:
+          context: portfolio-testing-application-circleci
           filters:
             branches:
               only: testing
       - deploy_testing:
+          context: portfolio-testing-application-circleci
           requires:
             - test
 
   production:
     jobs:
       - test:
+          context: portfolio-staging-application-circleci
           filters:
             branches:
               only: master
       - deploy_staging:
+          context: portfolio-staging-application-circleci
           requires:
             - test
       - approve:
@@ -82,5 +86,6 @@ workflows:
           requires:
             - deploy_staging
       - deploy_production:
+          context: portfolio-production-application-circleci
           requires:
             - approve
